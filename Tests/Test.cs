@@ -7,7 +7,7 @@ namespace TestProject1.Tests
     using OpenQA.Selenium;
     using OpenQA.Selenium.Support.UI;
     using global::TestProject1.Pages;
-
+    using NUnit.Framework;
 
     namespace TestProject1
     {
@@ -56,6 +56,7 @@ namespace TestProject1.Tests
                     Console.WriteLine("Test run succeded" + i + "times");
                     Home.HomeClick();
                 }
+                Console.WriteLine(" Test has been run successfully 5 times.");
                 webdriver.Quit();
             }
 
@@ -72,8 +73,9 @@ namespace TestProject1.Tests
                 shop.Buy(2,5,3);
                 cart.ClickCart();
                 Thread.Sleep(6000);
-                cart.tableData();
-               webdriver.Quit();
+                cart.subTotalverify();
+                cart.Totalverify();
+                webdriver.Quit();
             }
         }
     }
